@@ -6,7 +6,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'srcery-colors/srcery-vim'
 " Plug 'rakr/vim-one'
 " Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
+Plug 'arcticicestudio/nord-vim'
+" Plug 'sainnhe/gruvbox-material'
 Plug 'scrooloose/nerdtree'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -17,7 +18,7 @@ Plug 'mhinz/vim-signify'
 Plug 'itchyny/lightline.vim' " Lightline statubar
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': './install --bin' }
+" Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline' " buffers to tabline, shows buffers as tabs on top of window
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -37,7 +38,8 @@ call plug#end()
 "colorscheme onehalfdark
 "colorscheme one
 "colorscheme gruvbox
-colorscheme gruvbox-material
+"colorscheme gruvbox-material
+colorscheme nord
 
 highlight Pmenu ctermbg=111217 guibg=#111217
 
@@ -70,7 +72,6 @@ set cursorline
 " let g:airline_theme='one'
 " gruvbox-material
 let g:gruvbox_material_background='hard'
-
 let g:gruvbox_material_enable_italic = 1
 
 " nerdtree
@@ -127,6 +128,10 @@ nnoremap <silent> <Leader>r- :vertical resize -5<CR>
 nnoremap <silent> <Leader>r- :vertical resize -5<CR>
 nnoremap <silent> <Leader>fz :FZF<CR>
 nnoremap <silent> <Leader>fd :Ag<CR>
+nnoremap <UP> :resize +2<CR>
+nnoremap <DOWN> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 nmap <C-p> :GFiles<CR>
 nmap <s-p> :Rg<CR>
 "nnoremap <leader> :bn<CR>
@@ -157,6 +162,9 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
 
 if exists('veonim')
   set guifont=Fira\ Mono:h16
